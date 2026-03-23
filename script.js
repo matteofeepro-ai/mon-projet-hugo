@@ -69,12 +69,10 @@ window.addEventListener('scroll', () => {
 const cursor = document.getElementById('cursor');
 const follower = document.getElementById('cursor-follower');
 
-// N'active le curseur que sur les vrais appareils avec souris
-const hasMouseDevice = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-if (!hasMouseDevice) {
-  cursor.style.display = 'none';
-  follower.style.display = 'none';
-}
+// Curseur personnalisé désactivé
+const hasMouseDevice = false;
+cursor.style.display = 'none';
+follower.style.display = 'none';
 
 const darkSections = ['.hero', '.stats', '.footer'];
 
