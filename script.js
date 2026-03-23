@@ -209,13 +209,16 @@ lateralEls.forEach(({ el, dir }) => {
 
 const lateralObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
+    const dir = lateralEls.find(e => e.el === entry.target)?.dir;
     if (entry.isIntersecting) {
       entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translate(0)';
-      lateralObserver.unobserve(entry.target);
+      entry.target.style.transform = 'translateX(0)';
+    } else {
+      entry.target.style.opacity = '0';
+      entry.target.style.transform = dir === 'left' ? 'translateX(-60px)' : 'translateX(60px)';
     }
   });
-}, { threshold: 0.2 });
+}, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
 
 lateralEls.forEach(({ el }) => { if (el) lateralObserver.observe(el); });
 

@@ -595,7 +595,7 @@ body.cursor-hover #cursor-follower { width: 50px; height: 50px; border-color: va
   background-color: var(--light);
   background-image: radial-gradient(rgba(140,28,28,0.12) 1px, transparent 1px);
   background-size: 24px 24px;
-  position: relative; overflow: hidden;
+  position: relative;
 }
 .apropos::before {
   content: '';
@@ -605,6 +605,7 @@ body.cursor-hover #cursor-follower { width: 50px; height: 50px; border-color: va
   background: rgba(140,28,28,0.06);
   top: -150px; right: -150px;
   pointer-events: none;
+  overflow: hidden;
 }
 .apropos::after {
   content: '';
