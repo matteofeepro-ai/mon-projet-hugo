@@ -293,25 +293,26 @@ const counters = document.querySelectorAll('.counter');
 
 const counterObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
     const el = entry.target;
     const target = +el.dataset.target;
     const suffix = el.dataset.suffix || '';
-    const duration = 1500;
-    const step = target / (duration / 16);
-    let current = 0;
 
-    const update = () => {
-      current += step;
-      if (current < target) {
-        el.textContent = Math.floor(current) + suffix;
-        requestAnimationFrame(update);
-      } else {
-        el.textContent = target + suffix;
-      }
-    };
-    update();
-    counterObserver.unobserve(el);
+    if (entry.isIntersecting) {
+      let current = 0;
+      const step = target / (1500 / 16);
+      const update = () => {
+        current += step;
+        if (current < target) {
+          el.textContent = Math.floor(current) + suffix;
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = target + suffix;
+        }
+      };
+      update();
+    } else {
+      el.textContent = '0' + suffix;
+    }
   });
 }, { threshold: 0.5 });
 
