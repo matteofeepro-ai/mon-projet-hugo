@@ -1477,6 +1477,145 @@ body.cursor-hover #cursor-follower { width: 50px; height: 50px; border-color: va
 }
 
 /* =============================================
+   CITATION
+   ============================================= */
+.citation {
+  background: linear-gradient(135deg, #1a0a0a 0%, #8C1C1C 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.citation::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(201,168,76,0.1) 0%, transparent 70%);
+}
+.citation-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+.citation-icon {
+  font-size: 2.5rem;
+  color: var(--gold);
+  opacity: 0.5;
+  margin-bottom: 24px;
+  display: block;
+}
+.citation blockquote {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.citation cite {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* =============================================
+   POPUP BIENVENUE
+   ============================================= */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(4px);
+}
+.popup-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+.popup-box {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 48px 40px;
+  max-width: 460px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+  transform: translateY(30px);
+  transition: transform 0.4s ease;
+}
+.popup-overlay.visible .popup-box { transform: translateY(0); }
+
+.popup-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--light);
+  color: var(--gray);
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.popup-close:hover { background: var(--green); color: var(--white); }
+
+.popup-icon {
+  width: 64px; height: 64px;
+  background: linear-gradient(135deg, var(--green), var(--green-light));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.popup-box h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--green-dark);
+  margin-bottom: 12px;
+}
+.popup-box p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+.popup-skip {
+  display: block;
+  margin-top: 14px;
+  background: none;
+  border: none;
+  color: var(--gray);
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: var(--transition);
+}
+.popup-skip:hover { color: var(--green); }
+
+body.dark .popup-box { background: #2a2a2a; }
+body.dark .popup-box h3 { color: #f0f0f0; }
+body.dark .popup-close { background: #333; color: #aaa; }
+
+/* =============================================
    WHATSAPP FLOTTANT
    ============================================= */
 .whatsapp-btn {

@@ -237,6 +237,35 @@ window.addEventListener('scroll', () => {
 });
 
 // =============================================
+// HOVER 3D SUR LES CARTES SERVICES
+// =============================================
+document.querySelectorAll('.service-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width  - 0.5;
+    const y = (e.clientY - rect.top)  / rect.height - 0.5;
+    card.style.transform = `perspective(600px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg) translateY(-6px)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(600px) rotateY(0) rotateX(0) translateY(0)';
+  });
+});
+
+// =============================================
+// POPUP BIENVENUE
+// =============================================
+function closePopup() {
+  document.getElementById('popup-overlay').classList.remove('visible');
+  sessionStorage.setItem('popupSeen', 'true');
+}
+
+if (!sessionStorage.getItem('popupSeen')) {
+  setTimeout(() => {
+    document.getElementById('popup-overlay').classList.add('visible');
+  }, 5000);
+}
+
+// =============================================
 // FAQ — accordéon
 // =============================================
 function toggleFaq(btn) {
