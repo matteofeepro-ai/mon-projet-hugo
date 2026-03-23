@@ -168,7 +168,7 @@ sections.forEach(section => observer.observe(section));
 // SCROLL REVEAL — bas + latéral
 // =============================================
 const revealElements = document.querySelectorAll(
-  '.service-card, .contact-item, .stat, .badge, .tarif-card, .video-card, .faq-item, .avis-card'
+  '.service-card, .contact-item, .stat, .badge, .video-card, .faq-item, .avis-card'
 );
 
 revealElements.forEach((el, i) => {
