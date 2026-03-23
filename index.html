@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hugo Fée – Coach Sportif | Vignoble Nantais</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#accueil" class="nav-logo">
+        <img src="logo.png" alt="Logo Hugo Fée" id="logo-img" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block'" />
+        <span id="logo-text" style="display:none;">Hugo Fée</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#videos">Vidéos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="dark-toggle" id="darkToggle" aria-label="Mode sombre">
+          <i class="fas fa-moon" id="darkIcon"></i>
+        </button>
+        <button class="burger" id="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BARRE DE PROGRESSION -->
+  <div id="progress-bar"></div>
+
+  <!-- CURSEUR PERSONNALISÉ -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- BOUTON RETOUR EN HAUT -->
+  <button id="back-to-top" aria-label="Retour en haut">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- HERO -->
+  <section id="accueil" class="hero">
+    <div class="hero-overlay"></div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Formes décoratives -->
+    <div class="hero-shape shape-1"></div>
+    <div class="hero-shape shape-2"></div>
+    <div class="hero-shape shape-3"></div>
+    <div class="hero-shape shape-4"></div>
+    <div class="hero-shape shape-5"></div>
+    <div class="hero-dumbbell"><i class="fas fa-dumbbell"></i></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring hero-ring-2"></div>
+
+    <div class="hero-content">
+      <p class="hero-sub animate-hero" style="--delay:0.2s"><span id="typewriter"></span><span class="cursor-blink">|</span></p>
+      <h1 class="animate-hero" style="--delay:0.5s">Hugo <span class="accent">Fée</span></h1>
+      <p class="hero-desc animate-hero" style="--delay:0.8s">Atteignez vos objectifs avec un accompagnement personnalisé, au cœur du vignoble nantais.</p>
+      <div class="animate-hero" style="--delay:1.1s">
+        <a href="#contact" class="btn-primary">Prendre rendez-vous</a>
+        <a href="#services" class="btn-secondary">Découvrir mes services</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="apropos" class="section apropos">
+    <div class="container">
+      <div class="apropos-grid">
+        <div class="apropos-img-wrap">
+          <div class="apropos-img-placeholder">
+            <img src="photo hugo.jpg" alt="Hugo Fée – Coach Sportif" class="apropos-photo" />
+          </div>
+        </div>
+        <div class="apropos-text">
+          <span class="section-label">À propos</span>
+          <h2>Qui suis-je ?</h2>
+          <p>
+            Passionné de sport et de performance, je m'appelle <strong>Hugo Fée</strong>, coach sportif basé dans le
+            <strong>Vignoble Nantais</strong>. Titulaire d'un <strong>Master STAPS – Entraînement et Optimisation de la Performance Sportive (EOPS)</strong>, je mets mon expertise au service de votre progression.
+          </p>
+          <p>
+            Mon approche est <strong>humaine, scientifique et personnalisée</strong> : chaque programme est construit autour de vos objectifs, de votre niveau et de votre rythme de vie.
+          </p>
+          <div class="apropos-badges">
+            <div class="badge">
+              <i class="fas fa-graduation-cap"></i>
+              <span>Master STAPS EOPS</span>
+            </div>
+            <div class="badge">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Vignoble Nantais</span>
+            </div>
+            <div class="badge">
+              <i class="fas fa-dumbbell"></i>
+              <span>Coach certifié</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section services">
+    <div class="container">
+      <span class="section-label">Services</span>
+      <h2>Ce que je propose</h2>
+      <p class="section-intro">Un accompagnement sur-mesure pour tous les profils et tous les objectifs.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-user"></i></div>
+          <h3>Coaching individuel</h3>
+          <p>Séances en face à face, programme 100 % personnalisé selon vos objectifs et votre condition physique.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-users"></i></div>
+          <h3>Coaching en groupe</h3>
+          <p>Des sessions collectives dynamiques et motivantes, pour progresser ensemble dans une ambiance conviviale.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Bilan & Analyse</h3>
+          <p>Évaluation de votre condition physique, définition de vos objectifs et plan d'action structuré.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-apple-alt"></i></div>
+          <h3>Conseils nutritionnels</h3>
+          <p>Recommandations alimentaires adaptées à votre pratique sportive pour optimiser vos performances.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-running"></i></div>
+          <h3>Préparation physique</h3>
+          <p>Programmes de préparation spécifiques pour sportifs compétiteurs ou amateurs souhaitant progresser.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARIFS -->
+  <section id="tarifs" class="section tarifs">
+    <div class="container">
+      <span class="section-label">Tarifs</span>
+      <h2>Choisissez votre formule</h2>
+      <p class="section-intro">Des formules adaptées à tous les objectifs et tous les budgets.</p>
+      <div class="tarifs-grid">
+
+        <div class="tarif-card">
+          <div class="tarif-header">
+            <h3>Séance Découverte</h3>
+            <div class="tarif-price">
+              <span class="tarif-amount">Sur devis</span>
+            </div>
+          </div>
+          <ul class="tarif-features">
+            <li><i class="fas fa-check"></i> 1 séance unique</li>
+            <li><i class="fas fa-check"></i> Bilan condition physique</li>
+            <li><i class="fas fa-check"></i> Programme personnalisé</li>
+            <li><i class="fas fa-check"></i> À domicile ou en extérieur</li>
+            <li class="disabled"><i class="fas fa-times"></i> Suivi régulier</li>
+          </ul>
+          <a href="#contact" class="btn-tarif">Demander un devis</a>
+        </div>
+
+        <div class="tarif-card featured">
+          <div class="tarif-badge">Populaire</div>
+          <div class="tarif-header">
+            <h3>Pack Séances</h3>
+            <div class="tarif-price">
+              <span class="tarif-amount">Sur devis</span>
+            </div>
+          </div>
+          <ul class="tarif-features">
+            <li><i class="fas fa-check"></i> 5 ou 10 séances</li>
+            <li><i class="fas fa-check"></i> Programme évolutif</li>
+            <li><i class="fas fa-check"></i> Suivi des progressions</li>
+            <li><i class="fas fa-check"></i> À domicile ou en extérieur</li>
+            <li><i class="fas fa-check"></i> Conseils nutritionnels</li>
+          </ul>
+          <a href="#contact" class="btn-tarif">Demander un devis</a>
+        </div>
+
+        <div class="tarif-card">
+          <div class="tarif-header">
+            <h3>Abonnement Mensuel</h3>
+            <div class="tarif-price">
+              <span class="tarif-amount">Sur devis</span>
+            </div>
+          </div>
+          <ul class="tarif-features">
+            <li><i class="fas fa-check"></i> Séances illimitées / mois</li>
+            <li><i class="fas fa-check"></i> Programme sur-mesure</li>
+            <li><i class="fas fa-check"></i> Suivi complet</li>
+            <li><i class="fas fa-check"></i> À domicile ou en extérieur</li>
+            <li><i class="fas fa-check"></i> Conseils nutrition inclus</li>
+          </ul>
+          <a href="#contact" class="btn-tarif">Demander un devis</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDÉOS -->
+  <section id="videos" class="section videos">
+    <div class="container">
+      <span class="section-label">En action</span>
+      <h2>Exemples de cours</h2>
+      <p class="section-intro">Découvrez en vidéo à quoi ressemblent les séances avec Hugo.</p>
+      <div class="videos-grid">
+        <div class="video-card">
+          <video controls preload="metadata">
+            <source src="Vidéo 1.mp4" type="video/mp4" />
+          </video>
+          <p class="video-title">Remise en forme</p>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata">
+            <source src="Vidéo 2.mp4" type="video/mp4" />
+          </video>
+          <p class="video-title">Circuit cardio</p>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata">
+            <source src="Vidéo 3.mp4" type="video/mp4" />
+          </video>
+          <p class="video-title">Circuit training</p>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata">
+            <source src="Vidéo 4.mp4" type="video/mp4" />
+          </video>
+          <p class="video-title">Corrige ta posture !</p>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata">
+            <source src="Vidéo 5.mp4" type="video/mp4" />
+          </video>
+          <p class="video-title">Perte de poids</p>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata">
+            <source src="Vidéo 6.mp4" type="video/mp4" />
+          </video>
+          <p class="video-title">Cours collectifs en plein air</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHIFFRES -->
+  <!-- AVIS -->
+  <section id="avis" class="section avis">
+    <div class="container">
+      <span class="section-label">Témoignages</span>
+      <h2>Ce que disent mes clients</h2>
+      <div class="avis-grid">
+        <div class="avis-card">
+          <div class="avis-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span class="avis-note">5/5</span>
+          </div>
+          <p class="avis-texte">"Super coach très à l'écoute et très pro. Je recommande."</p>
+          <div class="avis-auteur">
+            <div class="avis-avatar">MB</div>
+            <span>Marion Bonnin</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section stats">
+    <div class="container stats-grid">
+      <div class="stat">
+        <span class="stat-number">Master</span>
+        <span class="stat-label">STAPS EOPS</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number counter" data-target="100" data-suffix="%">0</span>
+        <span class="stat-label">Personnalisé</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number"><i class="fas fa-map-marker-alt"></i></span>
+        <span class="stat-label">Vignoble Nantais</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number"><i class="fas fa-heart"></i></span>
+        <span class="stat-label">Passion & Rigueur</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section faq">
+    <div class="container">
+      <span class="section-label">FAQ</span>
+      <h2>Questions fréquentes</h2>
+      <p class="section-intro">Tout ce que vous voulez savoir avant de vous lancer.</p>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Où se déroulent les séances ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Je me déplace directement chez vous ou en extérieur, dans le Vignoble Nantais et ses alentours. Pas besoin de vous déplacer en salle de sport, je viens à vous !</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Quel niveau sportif faut-il avoir ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Aucun niveau minimum n'est requis ! Que vous soyez débutant complet ou sportif confirmé, les séances sont entièrement adaptées à votre niveau et progressent à votre rythme.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Quelle est la durée d'une séance ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Une séance dure généralement entre 45 minutes et 1 heure, selon le type d'entraînement et vos objectifs. La durée est ajustable selon vos disponibilités.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Comment se passe la première séance ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>La première séance est un bilan complet : on évalue votre condition physique, on définit ensemble vos objectifs et on construit un programme sur mesure. C'est aussi l'occasion de faire connaissance dans une ambiance détendue !</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Proposez-vous des formules d'abonnement ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, des formules à la séance ou en pack sont disponibles pour s'adapter à tous les budgets et tous les emplois du temps. N'hésitez pas à me contacter pour en discuter.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <span class="section-label">Contact</span>
+      <h2>Prenons contact</h2>
+      <p class="section-intro">Une question ? Un projet ? N'hésitez pas à me contacter, je vous réponds rapidement.</p>
+      <div class="contact-grid">
+        <div class="contact-infos">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <p class="contact-label">Téléphone</p>
+              <a href="tel:+33620969284">06 20 96 92 84</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <p class="contact-label">Email</p>
+              <a href="mailto:hugo.sportvignoble@gmail.com">hugo.sportvignoble@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <p class="contact-label">Zone d'intervention</p>
+              <span>Vignoble Nantais & alentours</span>
+            </div>
+          </div>
+          <div class="social-buttons">
+            <a href="https://www.facebook.com/p/Hugo-F%C3%A9e-Coach-sportif-%C3%A0-domicile-61566270384058/" target="_blank" class="social-btn facebook">
+              <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/hugo_coachdomicile/" target="_blank" class="social-btn instagram">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+          </div>
+        </div>
+        <div class="contact-map">
+          <iframe
+            src="https://maps.google.com/maps?q=Vignoble+Nantais,Loire-Atlantique,France&z=11&output=embed"
+            width="100%"
+            height="220"
+            style="border:0; border-radius: 12px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Zone d'intervention – Vignoble Nantais">
+          </iframe>
+          <p class="map-label"><i class="fas fa-map-marker-alt"></i> Zone d'intervention : Vignoble Nantais & alentours</p>
+        </div>
+
+        <form class="contact-form" onsubmit="sendForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
+            </div>
+            <div class="form-group">
+              <label for="prenom">Prénom</label>
+              <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="telephone">Téléphone</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="06 XX XX XX XX" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou votre objectif..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width">
+            <i class="fas fa-paper-plane"></i> Envoyer le message
+          </button>
+          <p id="form-success" class="form-success" style="display:none;">Message envoyé ! Je vous réponds très vite.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Logo" style="height:40px;" onerror="this.style.display='none'" />
+        <p>Hugo Fée – Coach Sportif<br />Vignoble Nantais</p>
+      </div>
+      <div class="footer-links">
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <a href="tel:+33620969284"><i class="fas fa-phone"></i> 06 20 96 92 84</a>
+        <a href="mailto:hugo.sportvignoble@gmail.com"><i class="fas fa-envelope"></i> hugo.sportvignoble@gmail.com</a>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/p/Hugo-F%C3%A9e-Coach-sportif-%C3%A0-domicile-61566270384058/" target="_blank" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/hugo_coachdomicile/" target="_blank" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Hugo Fée – Coach Sportif. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- BOUTON WHATSAPP -->
+  <a href="https://wa.me/33620969284" target="_blank" class="whatsapp-btn" aria-label="Contacter sur WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Contactez-moi !</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
