@@ -871,12 +871,16 @@ body.cursor-hover #cursor-follower { width: 50px; height: 50px; border-color: va
   padding: 36px 28px;
   border: 1.5px solid rgba(140,28,28,0.12);
   box-shadow: var(--shadow);
-  transition: var(--transition);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  z-index: 1;
 }
 .tarif-card:hover {
-  transform: scale(1.04) translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+.tarif-card:not(.featured):hover {
+  transform: scale(1.06) translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.18);
 }
 .tarif-card.featured {
   border-color: var(--green);
