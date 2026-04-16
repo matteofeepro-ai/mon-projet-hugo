@@ -700,20 +700,8 @@ body.cursor-hover #cursor-follower { width: 50px; height: 50px; border-color: va
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 28px;
-}
-
-.service-card {
-  grid-column: span 2;
-}
-
-.service-card:nth-child(4) {
-  grid-column: 2 / span 2;
-}
-
-.service-card:nth-child(5) {
-  grid-column: 4 / span 2;
 }
 
 .service-card {
@@ -767,6 +755,68 @@ body.cursor-hover #cursor-follower { width: 50px; height: 50px; border-color: va
   margin-bottom: 12px;
 }
 .service-card p { color: #a0a0a0; line-height: 1.7; font-size: 0.93rem; }
+
+/* =============================================
+   VOS OBJECTIFS
+   ============================================= */
+.objectifs { background: var(--white); }
+.objectifs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.objectif-card {
+  background: var(--light);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  transition: var(--transition);
+  border: 1.5px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+.objectif-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green), var(--green-light));
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+.objectif-card:hover {
+  border-color: rgba(140,28,28,0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 36px rgba(0,0,0,0.1);
+}
+.objectif-card:hover::before { transform: scaleX(1); }
+.objectif-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--green), var(--green-light));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+.objectif-card:hover .objectif-icon { transform: scale(1.1); }
+.objectif-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+.objectif-card p { color: #666; line-height: 1.7; font-size: 0.93rem; }
+
+/* Dark mode */
+body.dark .objectifs { background: #111; }
+body.dark .objectif-card { background: #1e1e1e; }
+body.dark .objectif-card h3 { color: #f0f0f0; }
+body.dark .objectif-card p { color: #a0a0a0; }
 
 /* =============================================
    TARIFS
@@ -1786,9 +1836,7 @@ body.dark .popup-close { background: #333; color: #aaa; }
    ============================================= */
 @media (max-width: 1024px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .service-card,
-  .service-card:nth-child(4),
-  .service-card:nth-child(5) { grid-column: span 1; }
+  .objectifs-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
   .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; }
@@ -1827,9 +1875,7 @@ body.dark .popup-close { background: #333; color: #aaa; }
   .apropos-img-placeholder { width: 240px; height: 280px; }
 
   .services-grid { grid-template-columns: 1fr; }
-  .service-card,
-  .service-card:nth-child(4),
-  .service-card:nth-child(5) { grid-column: span 1; }
+  .objectifs-grid { grid-template-columns: 1fr; }
 
   .videos-grid { grid-template-columns: 1fr; }
   .video-card:nth-child(4),
