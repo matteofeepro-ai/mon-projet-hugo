@@ -840,9 +840,8 @@ body.dark .objectif-card p { color: #a0a0a0; }
    TARIFS
    ============================================= */
 .tarifs {
-  background-color: var(--light);
-  background-image: radial-gradient(rgba(140,28,28,0.12) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-color: #ffffff;
+  background-image: none;
   position: relative;
 }
 .tarifs::before {
@@ -900,7 +899,7 @@ body.dark .objectif-card p { color: #a0a0a0; }
 .tarifs-title-row {
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 0;
 }
@@ -909,6 +908,8 @@ body.dark .objectif-card p { color: #a0a0a0; }
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-left: auto;
+  padding-right: 40px;
 }
 .tarif-logo {
   height: 110px;
