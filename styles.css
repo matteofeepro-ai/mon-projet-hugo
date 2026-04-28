@@ -896,6 +896,45 @@ body.dark .objectif-card p { color: #a0a0a0; }
 }
 .tarif-note i { color: var(--green); margin-right: 6px; }
 
+/* Logos SAP + Avance immédiate à côté du titre */
+.tarifs-title-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+.tarifs-title-row h2 { margin-bottom: 0; }
+.tarifs-logos {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.tarif-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Étoile sur les prix */
+.tarif-star {
+  font-size: 0.55em;
+  color: var(--gold);
+  font-weight: 900;
+  vertical-align: super;
+  margin-left: 2px;
+}
+.tarif-card.featured .tarif-star { color: var(--gold); }
+
+/* Note étoile dans le bandeau */
+.sap-note {
+  margin-top: 8px !important;
+  font-size: 0.82rem !important;
+  color: rgba(255,255,255,0.55) !important;
+  font-style: italic;
+}
+
 .sap-banner {
   display: flex;
   align-items: flex-start;
