@@ -212,6 +212,24 @@ body.cursor-hover #cursor-follower { width: 50px; height: 50px; border-color: va
   align-items: center;
   gap: 12px;
 }
+.btn-reserver {
+  background: var(--green);
+  color: var(--white) !important;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-reserver:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(140,28,28,0.3);
+}
+@media (max-width: 768px) { .btn-reserver { display: none; } }
 .dark-toggle {
   width: 36px;
   height: 36px;

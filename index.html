@@ -25,11 +25,11 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#objectifs">Vos objectifs</a></li>
         <li><a href="#tarifs">Tarifs</a></li>
-        <li><a href="#contact">Contact</a></li>
         <li><a href="#videos">Vidéos</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
       <div class="nav-actions">
+        <a href="#contact" class="btn-reserver">Réserver</a>
         <button class="dark-toggle" id="darkToggle" aria-label="Mode sombre">
           <i class="fas fa-moon" id="darkIcon"></i>
         </button>
@@ -282,18 +282,85 @@
     </div>
   </section>
 
-  <!-- RÉSERVATION -->
-  <section id="reservation" class="section reservation">
+  <!-- RÉSERVER / CONTACT -->
+  <section id="contact" class="section contact">
     <div class="container">
       <span class="section-label">Réservation</span>
       <h2>Réservez votre séance</h2>
-      <p class="section-intro">Choisissez directement le créneau qui vous convient, je confirme sous 24h.</p>
-      <div class="calendly-wrap">
-        <div class="calendly-inline-widget"
-          data-url="https://calendly.com/hugo-sportvignoble"
-          style="min-width:320px; height:660px;">
+      <p class="section-intro">Une question ? Prêt à vous lancer ? Contactez-moi, je vous réponds rapidement.</p>
+      <div class="contact-grid">
+        <div class="contact-infos">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <p class="contact-label">Téléphone</p>
+              <a href="tel:+33620969284">06 20 96 92 84</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <p class="contact-label">Email</p>
+              <a href="mailto:hugo.sportvignoble@gmail.com">hugo.sportvignoble@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <p class="contact-label">Zone d'intervention</p>
+              <span>Vignoble Nantais & alentours</span>
+            </div>
+          </div>
+          <div class="social-buttons">
+            <a href="https://www.facebook.com/p/Hugo-F%C3%A9e-Coach-sportif-%C3%A0-domicile-61566270384058/" target="_blank" class="social-btn facebook">
+              <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/hugo_coachdomicile/" target="_blank" class="social-btn instagram">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+          </div>
         </div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <div class="contact-map">
+          <iframe
+            src="https://maps.google.com/maps?q=Vignoble+Nantais,Loire-Atlantique,France&z=11&output=embed"
+            width="100%"
+            height="220"
+            style="border:0; border-radius: 12px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Zone d'intervention – Vignoble Nantais">
+          </iframe>
+          <p class="map-label"><i class="fas fa-map-marker-alt"></i> Zone d'intervention : Vignoble Nantais & alentours</p>
+        </div>
+        <form class="contact-form" onsubmit="sendForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
+            </div>
+            <div class="form-group">
+              <label for="prenom">Prénom</label>
+              <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="telephone">Téléphone</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="06 XX XX XX XX" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou votre objectif..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width">
+            <i class="fas fa-paper-plane"></i> Envoyer le message
+          </button>
+          <p id="form-success" class="form-success" style="display:none;">Message envoyé ! Je vous réponds très vite.</p>
+        </form>
       </div>
     </div>
   </section>
@@ -459,90 +526,6 @@
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <span class="section-label">Contact</span>
-      <h2>Prenons contact</h2>
-      <p class="section-intro">Une question ? Un projet ? N'hésitez pas à me contacter, je vous réponds rapidement.</p>
-      <div class="contact-grid">
-        <div class="contact-infos">
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-phone"></i></div>
-            <div>
-              <p class="contact-label">Téléphone</p>
-              <a href="tel:+33620969284">06 20 96 92 84</a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <div>
-              <p class="contact-label">Email</p>
-              <a href="mailto:hugo.sportvignoble@gmail.com">hugo.sportvignoble@gmail.com</a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div>
-              <p class="contact-label">Zone d'intervention</p>
-              <span>Vignoble Nantais & alentours</span>
-            </div>
-          </div>
-          <div class="social-buttons">
-            <a href="https://www.facebook.com/p/Hugo-F%C3%A9e-Coach-sportif-%C3%A0-domicile-61566270384058/" target="_blank" class="social-btn facebook">
-              <i class="fab fa-facebook-f"></i> Facebook
-            </a>
-            <a href="https://www.instagram.com/hugo_coachdomicile/" target="_blank" class="social-btn instagram">
-              <i class="fab fa-instagram"></i> Instagram
-            </a>
-          </div>
-        </div>
-        <div class="contact-map">
-          <iframe
-            src="https://maps.google.com/maps?q=Vignoble+Nantais,Loire-Atlantique,France&z=11&output=embed"
-            width="100%"
-            height="220"
-            style="border:0; border-radius: 12px;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Zone d'intervention – Vignoble Nantais">
-          </iframe>
-          <p class="map-label"><i class="fas fa-map-marker-alt"></i> Zone d'intervention : Vignoble Nantais & alentours</p>
-        </div>
-
-        <form class="contact-form" onsubmit="sendForm(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
-            </div>
-            <div class="form-group">
-              <label for="prenom">Prénom</label>
-              <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="votre@email.com" required />
-          </div>
-          <div class="form-group">
-            <label for="telephone">Téléphone</label>
-            <input type="tel" id="telephone" name="telephone" placeholder="06 XX XX XX XX" />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou votre objectif..." required></textarea>
-          </div>
-          <button type="submit" class="btn-primary full-width">
-            <i class="fas fa-paper-plane"></i> Envoyer le message
-          </button>
-          <p id="form-success" class="form-success" style="display:none;">Message envoyé ! Je vous réponds très vite.</p>
-        </form>
       </div>
     </div>
   </section>
