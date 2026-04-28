@@ -911,7 +911,7 @@ body.dark .objectif-card p { color: #a0a0a0; }
   gap: 14px;
 }
 .tarif-logo {
-  height: 52px;
+  height: 110px;
   width: auto;
   object-fit: contain;
   border-radius: 8px;
